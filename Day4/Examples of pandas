@@ -1,0 +1,22 @@
+->  In [90]: tuples = list(zip(*[['bar', 'bar', 'baz', 'baz',
+		   ....:                      'foo', 'foo', 'qux', 'qux'],
+		   ....:                     ['one', 'two', 'one', 'two',
+		   ....:                      'one', 'two', 'one', 'two']]))
+		   ....: 
+
+		In [91]: index = pd.MultiIndex.from_tuples(tuples, names=['first', 'second'])
+
+		In [92]: df = pd.DataFrame(np.random.randn(8, 2), index=index, columns=['A', 'B'])
+
+		In [93]: df2 = df[:4]
+
+		In [94]: df2
+		Out[94]: 
+				             A         B
+		first second                    
+		bar   one     0.029399 -0.542108
+			  two     0.282696 -0.087302
+		baz   one    -1.575170  1.771208
+			  two     0.816482  1.100230
+
+->	

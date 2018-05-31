@@ -2,7 +2,7 @@ import numpy as np
 
 X = np.array(([0,1], [1,1],[0,0],[1,0]), dtype=float)
 y = np.array(([1], [0],[0],[1]), dtype=float)
-xPredicted = np.array(([1,0],[0,1],[1,1]), dtype=float)
+xPredicted = np.array(([1,0],[0,1],[1,1],[0,0]), dtype=float)
 
 '''X = X/np.amax(X, axis=0)
 xPredicted = xPredicted/np.amax(xPredicted, axis=0)
@@ -13,7 +13,7 @@ class Neural_Network(object):
 
     self.inputSize = 2
     self.outputSize = 1
-    self.hiddenSize = 3
+    self.hiddenSize = 10
 
 
     self.W1 = np.random.randn(self.inputSize, self.hiddenSize)
